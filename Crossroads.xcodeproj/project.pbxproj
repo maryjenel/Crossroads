@@ -10,6 +10,8 @@
 		60ED449F1B51B9AC00D068DD /* ItemGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60ED449E1B51B9AC00D068DD /* ItemGridViewController.m */; };
 		60ED44A21B51BA1600D068DD /* ItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60ED44A11B51BA1600D068DD /* ItemViewController.m */; };
 		60ED44A51B51BA2B00D068DD /* ItemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60ED44A41B51BA2B00D068DD /* ItemDetailViewController.m */; };
+		60ED44A81B51D59F00D068DD /* ItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60ED44A71B51D59F00D068DD /* ItemCollectionViewCell.m */; };
+		60ED44AD1B51D6A700D068DD /* OfferingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60ED44AC1B51D6A700D068DD /* OfferingTableViewCell.m */; };
 		620114BA1B50E03600EDF945 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 620114B91B50E03600EDF945 /* main.m */; };
 		620114BD1B50E03600EDF945 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 620114BC1B50E03600EDF945 /* AppDelegate.m */; };
 		620114C01B50E03600EDF945 /* Crossroads.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 620114BE1B50E03600EDF945 /* Crossroads.xcdatamodeld */; };
@@ -37,6 +39,10 @@
 		60ED44A11B51BA1600D068DD /* ItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemViewController.m; sourceTree = "<group>"; };
 		60ED44A31B51BA2B00D068DD /* ItemDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemDetailViewController.h; sourceTree = "<group>"; };
 		60ED44A41B51BA2B00D068DD /* ItemDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemDetailViewController.m; sourceTree = "<group>"; };
+		60ED44A61B51D59E00D068DD /* ItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemCollectionViewCell.h; sourceTree = "<group>"; };
+		60ED44A71B51D59F00D068DD /* ItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemCollectionViewCell.m; sourceTree = "<group>"; };
+		60ED44AB1B51D6A700D068DD /* OfferingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfferingTableViewCell.h; sourceTree = "<group>"; };
+		60ED44AC1B51D6A700D068DD /* OfferingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfferingTableViewCell.m; sourceTree = "<group>"; };
 		620114B41B50E03600EDF945 /* Crossroads.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crossroads.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		620114B81B50E03600EDF945 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		620114B91B50E03600EDF945 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -71,6 +77,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		60ED44A91B51D65F00D068DD /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				620114C11B50E03600EDF945 /* InitialViewController.h */,
+				620114C21B50E03600EDF945 /* InitialViewController.m */,
+				60ED449D1B51B9AC00D068DD /* ItemGridViewController.h */,
+				60ED449E1B51B9AC00D068DD /* ItemGridViewController.m */,
+				60ED44A01B51BA1600D068DD /* ItemViewController.h */,
+				60ED44A11B51BA1600D068DD /* ItemViewController.m */,
+				60ED44A31B51BA2B00D068DD /* ItemDetailViewController.h */,
+				60ED44A41B51BA2B00D068DD /* ItemDetailViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		60ED44AA1B51D67E00D068DD /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				60ED44A61B51D59E00D068DD /* ItemCollectionViewCell.h */,
+				60ED44A71B51D59F00D068DD /* ItemCollectionViewCell.m */,
+				60ED44AB1B51D6A700D068DD /* OfferingTableViewCell.h */,
+				60ED44AC1B51D6A700D068DD /* OfferingTableViewCell.m */,
+			);
+			name = "Custom Cells";
+			sourceTree = "<group>";
+		};
 		620114AB1B50E03500EDF945 = {
 			isa = PBXGroup;
 			children = (
@@ -94,15 +126,9 @@
 			children = (
 				620114BB1B50E03600EDF945 /* AppDelegate.h */,
 				620114BC1B50E03600EDF945 /* AppDelegate.m */,
-				620114C11B50E03600EDF945 /* InitialViewController.h */,
-				620114C21B50E03600EDF945 /* InitialViewController.m */,
 				620114C41B50E03600EDF945 /* Main.storyboard */,
-				60ED44A01B51BA1600D068DD /* ItemViewController.h */,
-				60ED44A11B51BA1600D068DD /* ItemViewController.m */,
-				60ED449D1B51B9AC00D068DD /* ItemGridViewController.h */,
-				60ED449E1B51B9AC00D068DD /* ItemGridViewController.m */,
-				60ED44A31B51BA2B00D068DD /* ItemDetailViewController.h */,
-				60ED44A41B51BA2B00D068DD /* ItemDetailViewController.m */,
+				60ED44A91B51D65F00D068DD /* View Controllers */,
+				60ED44AA1B51D67E00D068DD /* Custom Cells */,
 				620114C71B50E03600EDF945 /* Images.xcassets */,
 				620114C91B50E03600EDF945 /* LaunchScreen.xib */,
 				620114BE1B50E03600EDF945 /* Crossroads.xcdatamodeld */,
@@ -238,7 +264,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				620114BD1B50E03600EDF945 /* AppDelegate.m in Sources */,
+				60ED44A81B51D59F00D068DD /* ItemCollectionViewCell.m in Sources */,
 				60ED44A21B51BA1600D068DD /* ItemViewController.m in Sources */,
+				60ED44AD1B51D6A700D068DD /* OfferingTableViewCell.m in Sources */,
 				60ED44A51B51BA2B00D068DD /* ItemDetailViewController.m in Sources */,
 				620114BA1B50E03600EDF945 /* main.m in Sources */,
 				620114C31B50E03600EDF945 /* InitialViewController.m in Sources */,

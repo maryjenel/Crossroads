@@ -97,7 +97,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="j4N-A6-Y9e">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ItemCell" id="j4N-A6-Y9e" customClass="ItemCollectionViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -131,6 +131,8 @@
                                             <constraint firstAttribute="bottomMargin" secondItem="JeH-m3-pvG" secondAttribute="bottom" constant="5" id="skg-Ps-KRT"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="itemImageView" destination="Tr3-4j-tIn" id="bhK-Gm-7h9"/>
+                                            <outlet property="itemLabel" destination="JeH-m3-pvG" id="L8v-CS-YYi"/>
                                             <segue destination="LgV-Nr-uwT" kind="push" id="VWG-0v-Hm8"/>
                                         </connections>
                                     </collectionViewCell>
@@ -187,7 +189,7 @@
                                 <rect key="frame" x="0.0" y="289" width="320" height="272"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="54" id="qMG-15-OqB">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="OfferingCell" rowHeight="54" id="qMG-15-OqB" customClass="OfferingTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qMG-15-OqB" id="IP8-rW-Gu4">
@@ -237,6 +239,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="offeringDistanceLabel" destination="A79-g9-FQI" id="54W-VQ-0ah"/>
+                                            <outlet property="offeringTextLabel" destination="JRL-to-EGj" id="xoR-LC-rz9"/>
+                                            <outlet property="userAvatarImageView" destination="D1e-Li-Aqn" id="SLw-GM-OkW"/>
                                             <segue destination="JC7-bc-tdI" kind="push" id="AaP-Nr-DPG"/>
                                         </connections>
                                     </tableViewCell>
@@ -269,6 +274,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="jmE-XT-uR7"/>
                     <connections>
+                        <outlet property="itemImageView" destination="3VQ-e4-EDE" id="P9g-VR-H8a"/>
+                        <outlet property="itemLabel" destination="p9O-0N-gNm" id="FEl-gJ-0lV"/>
                         <outlet property="itemOfferingsTableView" destination="Oia-nu-O8E" id="kNI-0h-D42"/>
                     </connections>
                 </viewController>

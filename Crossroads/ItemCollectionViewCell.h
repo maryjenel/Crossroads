@@ -1,5 +1,5 @@
 //
-//  ItemViewController.h
+//  ItemCollectionViewCell.h
 //  Crossroads
 //
 //  Created by Yi-Chin Sun on 7/11/15.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ItemViewController : UIViewController
-@property (strong, nonatomic) IBOutlet UILabel *itemLabel;
+@interface ItemCollectionViewCell : UICollectionViewCell
 @property (strong, nonatomic) IBOutlet UIImageView *itemImageView;
+@property (strong, nonatomic) IBOutlet UILabel *itemLabel;
 
 @end
