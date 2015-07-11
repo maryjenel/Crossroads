@@ -1,4 +1,4 @@
-//
+g//
 //  ViewController.m
 //  Crossroads
 //
@@ -17,7 +17,7 @@
 @implementation InitialViewController
 
 - (void)viewDidLoad
-{
+{goto <#label#>
     [super viewDidLoad];
 }
 
