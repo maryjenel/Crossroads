@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lfu-n7-Vtk">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lfu-n7-Vtk">
                                 <rect key="frame" x="0.0" y="64" width="320" height="252"/>
                                 <color key="backgroundColor" red="0.93333333330000001" green="0.34509803919999998" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="27"/>
@@ -29,7 +29,7 @@
                                     <segue destination="c7l-av-qfx" kind="push" id="naL-nu-3iX"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ATZ-VO-9Am">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ATZ-VO-9Am">
                                 <rect key="frame" x="0.0" y="315" width="320" height="252"/>
                                 <color key="backgroundColor" red="0.28627450980000002" green="0.83529411760000005" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="27"/>
@@ -43,6 +43,15 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Lfu-n7-Vtk" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="CoJ-56-vjF"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="ATZ-VO-9Am" secondAttribute="bottom" id="Oim-fo-wd4"/>
+                            <constraint firstItem="Lfu-n7-Vtk" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="SDM-ij-uOR"/>
+                            <constraint firstItem="ATZ-VO-9Am" firstAttribute="top" secondItem="Lfu-n7-Vtk" secondAttribute="bottom" id="XfU-8B-edj"/>
+                            <constraint firstAttribute="trailing" secondItem="ATZ-VO-9Am" secondAttribute="trailing" id="fDW-wC-ZGe"/>
+                            <constraint firstAttribute="trailing" secondItem="Lfu-n7-Vtk" secondAttribute="trailing" id="gup-8T-v5U"/>
+                            <constraint firstItem="ATZ-VO-9Am" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="j31-6J-51S"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6py-3Q-5b8"/>
                 </viewController>
@@ -50,10 +59,10 @@
             </objects>
             <point key="canvasLocation" x="694" y="366"/>
         </scene>
-        <!--View Controller-->
+        <!--Item Grid View Controller-->
         <scene sceneID="zQ5-NC-QdP">
             <objects>
-                <viewController id="c7l-av-qfx" sceneMemberID="viewController">
+                <viewController id="c7l-av-qfx" customClass="ItemGridViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ejS-KY-6sw"/>
                         <viewControllerLayoutGuide type="bottom" id="lpd-7V-x0i"/>
@@ -144,15 +153,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="uTq-5b-8vg"/>
+                    <connections>
+                        <outlet property="itemCollectionView" destination="Rg9-7b-3GM" id="nY5-eZ-Yb3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kZo-X5-p1w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1053" y="366"/>
         </scene>
-        <!--View Controller-->
+        <!--Item View Controller-->
         <scene sceneID="pCh-bu-oZb">
             <objects>
-                <viewController id="LgV-Nr-uwT" sceneMemberID="viewController">
+                <viewController id="LgV-Nr-uwT" customClass="ItemViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Cmj-da-7F1"/>
                         <viewControllerLayoutGuide type="bottom" id="1I4-iw-vst"/>
@@ -256,15 +268,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jmE-XT-uR7"/>
+                    <connections>
+                        <outlet property="itemOfferingsTableView" destination="Oia-nu-O8E" id="kNI-0h-D42"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mzi-CL-VTX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1442" y="367"/>
         </scene>
-        <!--View Controller-->
+        <!--Item Detail View Controller-->
         <scene sceneID="ldG-Ys-ALG">
             <objects>
-                <viewController id="JC7-bc-tdI" sceneMemberID="viewController">
+                <viewController id="JC7-bc-tdI" customClass="ItemDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Exo-0f-ceR"/>
                         <viewControllerLayoutGuide type="bottom" id="dgj-AR-O1j"/>
@@ -273,19 +288,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ltP-dI-YN1">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ltP-dI-YN1">
                                 <rect key="frame" x="0.0" y="515" width="160" height="53"/>
                                 <color key="backgroundColor" red="0.28627450980000002" green="0.83529411760000005" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <rect key="contentStretch" x="0.050000000000000003" y="0.0" width="1" height="1"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="Ded-Mc-XHO"/>
+                                </constraints>
                                 <state key="normal" title="Trade">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vv5-5C-yg3">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vv5-5C-yg3">
                                 <rect key="frame" x="160" y="515" width="160" height="53"/>
                                 <color key="backgroundColor" red="0.93333333330000001" green="0.34509803919999998" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <rect key="contentStretch" x="0.050000000000000003" y="0.0" width="1" height="1"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="Oyj-Hk-yfN"/>
+                                </constraints>
                                 <state key="normal" title="Get at Store">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -303,6 +324,13 @@
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dgj-AR-O1j" firstAttribute="top" secondItem="ltP-dI-YN1" secondAttribute="bottom" id="S8S-CO-aas"/>
+                            <constraint firstItem="dgj-AR-O1j" firstAttribute="top" secondItem="Vv5-5C-yg3" secondAttribute="bottom" id="VOh-G7-yVV"/>
+                            <constraint firstAttribute="trailing" secondItem="Vv5-5C-yg3" secondAttribute="trailing" id="b1h-ty-1aa"/>
+                            <constraint firstItem="ltP-dI-YN1" firstAttribute="leading" secondItem="wNk-yz-vEF" secondAttribute="leading" id="fxz-9X-17r"/>
+                            <constraint firstItem="Vv5-5C-yg3" firstAttribute="leading" secondItem="ltP-dI-YN1" secondAttribute="trailing" id="oYx-W2-LRJ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Mw2-BV-PeI"/>
                 </viewController>
