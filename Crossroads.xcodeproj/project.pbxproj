@@ -10,7 +10,7 @@
 		620114BA1B50E03600EDF945 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 620114B91B50E03600EDF945 /* main.m */; };
 		620114BD1B50E03600EDF945 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 620114BC1B50E03600EDF945 /* AppDelegate.m */; };
 		620114C01B50E03600EDF945 /* Crossroads.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 620114BE1B50E03600EDF945 /* Crossroads.xcdatamodeld */; };
-		620114C31B50E03600EDF945 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 620114C21B50E03600EDF945 /* ViewController.m */; };
+		620114C31B50E03600EDF945 /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 620114C21B50E03600EDF945 /* InitialViewController.m */; };
 		620114C61B50E03600EDF945 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 620114C41B50E03600EDF945 /* Main.storyboard */; };
 		620114C81B50E03600EDF945 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 620114C71B50E03600EDF945 /* Images.xcassets */; };
 		620114CB1B50E03600EDF945 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 620114C91B50E03600EDF945 /* LaunchScreen.xib */; };
@@ -34,8 +34,8 @@
 		620114BB1B50E03600EDF945 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		620114BC1B50E03600EDF945 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		620114BF1B50E03600EDF945 /* Crossroads.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Crossroads.xcdatamodel; sourceTree = "<group>"; };
-		620114C11B50E03600EDF945 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		620114C21B50E03600EDF945 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		620114C11B50E03600EDF945 /* InitialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InitialViewController.h; sourceTree = "<group>"; };
+		620114C21B50E03600EDF945 /* InitialViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InitialViewController.m; sourceTree = "<group>"; };
 		620114C51B50E03600EDF945 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		620114C71B50E03600EDF945 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		620114CA1B50E03600EDF945 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -85,8 +85,8 @@
 			children = (
 				620114BB1B50E03600EDF945 /* AppDelegate.h */,
 				620114BC1B50E03600EDF945 /* AppDelegate.m */,
-				620114C11B50E03600EDF945 /* ViewController.h */,
-				620114C21B50E03600EDF945 /* ViewController.m */,
+				620114C11B50E03600EDF945 /* InitialViewController.h */,
+				620114C21B50E03600EDF945 /* InitialViewController.m */,
 				620114C41B50E03600EDF945 /* Main.storyboard */,
 				620114C71B50E03600EDF945 /* Images.xcassets */,
 				620114C91B50E03600EDF945 /* LaunchScreen.xib */,
@@ -224,7 +224,7 @@
 			files = (
 				620114BD1B50E03600EDF945 /* AppDelegate.m in Sources */,
 				620114BA1B50E03600EDF945 /* main.m in Sources */,
-				620114C31B50E03600EDF945 /* ViewController.m in Sources */,
+				620114C31B50E03600EDF945 /* InitialViewController.m in Sources */,
 				620114C01B50E03600EDF945 /* Crossroads.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,6 +420,7 @@
 				620114DC1B50E03600EDF945 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		620114DD1B50E03600EDF945 /* Build configuration list for PBXNativeTarget "CrossroadsTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +429,7 @@
 				620114DF1B50E03600EDF945 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
