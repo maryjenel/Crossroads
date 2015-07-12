@@ -17,7 +17,9 @@
 @implementation InitialViewController
 
 - (void)viewDidLoad
+<<<<<<< HEAD
 {    [super viewDidLoad];
+=======
 }
 
 
