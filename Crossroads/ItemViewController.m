@@ -40,6 +40,7 @@
     PFQuery *query = [PFQuery queryWithClassName:@"Offering"];
     NSLog(@"%@", self.searchItem.itemName);
     [query whereKey:@"item" equalTo:self.searchItem.itemName];
+    [query addAscendingOrder:@"distance"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *offerings, NSError *error) {
         if (!error){
             all_offerings = [NSArray arrayWithArray:offerings];
@@ -100,6 +101,7 @@
 {
     ItemDetailViewController *vc = segue.destinationViewController;
     vc.item = [all_offerings objectAtIndex:[[self.itemOfferingsTableView indexPathForCell:sender] row]];
+    vc.searchItem = self.searchItem;
 
 //    //used to add user to offerings/requests manually added to Parse
 //    PFUser *user = [PFUser currentUser];
