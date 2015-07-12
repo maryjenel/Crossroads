@@ -13,6 +13,7 @@
 
 @interface ItemDetailViewController ()<MFMessageComposeViewControllerDelegate>
 @property (strong, nonatomic) IBOutlet UIImageView *detailImageView;
+@property (strong, nonatomic) IBOutlet UITextView *longDescriptionTextView;
 
 @end
 
@@ -21,8 +22,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.detailImageView.image = self.searchItem.itemImage;
+
     UIColor *red = [UIColor colorWithRed:.93 green:.35 blue:.17 alpha:1];
     UIColor *blue = [UIColor colorWithRed:.29 green:.84 blue:.84 alpha:1];
+    self.longDescriptionTextView.text = self.item[@"longDescription"];
     if ([SearchItem isRequestWanted]) {
         self.detailImageView.image = self.searchItem.itemImage;
         // Do any additional setup after loading the view.
