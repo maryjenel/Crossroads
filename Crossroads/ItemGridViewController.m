@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *otherBtn;
 @property UIColor* bgcolor;
 
+@property (weak, nonatomic) IBOutlet UILabel *selectItemlbl;
 
 @end
 
@@ -33,19 +34,20 @@
     [self.navigationController.navigationBar setTitleTextAttributes:@{ NSForegroundColorAttributeName: [UIColor blackColor],
                                                                       NSFontAttributeName: [UIFont fontWithName:@"Avenir" size:20.0f]                                                                      }];
     [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
+    [self.navigationItem setTitle:@"Crossroads"];
+
 
     
-    
-    if (self.isRequestedWanted) {
+    if ([SearchItem isRequestWanted]) {
         _itemCollectionView.backgroundColor = red;
         _otherBtn.backgroundColor = blue;
-        self.navigationItem.title = @"Wanted";
+        self.selectItemlbl.text = @"Select an item wanted";
        // [self.navigationController.navigationBar setBarTintColor: blue];
     }
     else {
         _itemCollectionView.backgroundColor = blue;
         _otherBtn.backgroundColor = red;
-        [self.navigationItem setTitle:@"Trade"];
+        self.selectItemlbl.text = @"Select an item to trade";
        // [self.navigationController.navigationBar setBarTintColor: red];
 
 
