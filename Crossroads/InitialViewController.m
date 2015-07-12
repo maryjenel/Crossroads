@@ -1,4 +1,4 @@
-g//
+//
 //  ViewController.m
 //  Crossroads
 //
@@ -17,8 +17,7 @@ g//
 @implementation InitialViewController
 
 - (void)viewDidLoad
-{goto <#label#>
-    [super viewDidLoad];
+{    [super viewDidLoad];
 }
 
 
@@ -28,7 +27,7 @@ g//
     user[@"isRequesting"] = @"Yes";
 
     PFObject *wanted = [PFObject objectWithClassName:@"Request"];
-    wanted[@"user"] = [PFUser currentUser];
+   // wanted[@"user"] = [PFUser currentUser];
 }
 - (IBAction)onTradeBtnSelected:(UIButton *)sender
 {
@@ -36,7 +35,7 @@ g//
     user[@"isOffering"] = @"Yes";
 
     PFObject *wanted = [PFObject objectWithClassName:@"Request"];
-    wanted[@"user"] = [PFUser currentUser];
+  //  wanted[@"user"] = [PFUser currentUser];
 }
 
 @end
