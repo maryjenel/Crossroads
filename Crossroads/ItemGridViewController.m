@@ -13,11 +13,11 @@
 
 @interface ItemGridViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (strong, nonatomic) IBOutlet UICollectionView *itemCollectionView;
+@property (strong, nonatomic) IBOutlet UIView *itemGridView;
 @property NSMutableArray *itemArray;
 
 @property (weak, nonatomic) IBOutlet UIButton *otherBtn;
-
-//@property UIColor* bgcolor;
+@property UIColor* bgcolor;
 
 
 @end
@@ -28,9 +28,19 @@
     [super viewDidLoad];
     [self addingSearchItems];
     [self.itemCollectionView reloadData];
-    //UIColor *red = [UIColor colorWithRed:238 green:88 blue:44 alpha:1];
-    //UIColor *blue = [UIColor colorWithRed:73 green:213 blue:213 alpha:1];
-    //_itemCollectionView.backgroundColor = self.bgcolor;
+    UIColor *red = [UIColor colorWithRed:.93 green:.35 blue:.17 alpha:1];
+    UIColor *blue = [UIColor colorWithRed:.29 green:.84 blue:.84 alpha:1];
+    
+    
+    if (self.isRequestedWanted) {
+        _itemCollectionView.backgroundColor = red;
+        _otherBtn.backgroundColor = blue;
+    }
+    else {
+        _itemCollectionView.backgroundColor = blue;
+        _otherBtn.backgroundColor = red;
+    }
+    
 }
 
 - (void)addingSearchItems
@@ -67,6 +77,7 @@
 {
     ItemViewController *vc = segue.destinationViewController;
     vc.searchItem = sender;
+    //vc.wanted = self.isRequestedWanted;
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
