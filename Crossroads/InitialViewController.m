@@ -1,4 +1,4 @@
-//
+g//
 //  ViewController.m
 //  Crossroads
 //
@@ -7,21 +7,36 @@
 //
 
 #import "InitialViewController.h"
-
+#import <Parse/Parse.h>
 @interface InitialViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *wantedbtn;
+@property (weak, nonatomic) IBOutlet UIButton *tradebtn;
 
 @end
 
 @implementation InitialViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{goto <#label#>
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+- (IBAction)onWantedBtnSelected:(UIButton *)sender
+{
+    PFObject *user = [PFObject objectWithClassName:@"User"];
+    user[@"isRequesting"] = @"Yes";
+
+    PFObject *wanted = [PFObject objectWithClassName:@"Request"];
+    wanted[@"user"] = [PFUser currentUser];
+}
+- (IBAction)onTradeBtnSelected:(UIButton *)sender
+{
+    PFObject *user = [PFObject objectWithClassName:@"User"];
+    user[@"isOffering"] = @"Yes";
+
+    PFObject *wanted = [PFObject objectWithClassName:@"Request"];
+    wanted[@"user"] = [PFUser currentUser];
 }
 
 @end
