@@ -26,7 +26,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="onWantedBtnSelected:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="iV0-9R-H2U"/>
+                                    <action selector="onWantedButtonSelected:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Kw4-A6-75V"/>
                                     <segue destination="c7l-av-qfx" kind="push" id="naL-nu-3iX"/>
                                 </connections>
                             </button>
@@ -39,7 +39,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="onTradeBtnSelected:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="nuh-0n-kYf"/>
+                                    <action selector="onTradeButtonSelected:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="GGx-d3-o86"/>
                                     <segue destination="c7l-av-qfx" kind="push" id="AGY-QS-g1U"/>
                                 </connections>
                             </button>
@@ -57,7 +57,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="6py-3Q-5b8"/>
                     <connections>
-                        <outlet property="tradebtn" destination="ATZ-VO-9Am" id="t0G-rr-viX"/>
+                        <outlet property="tradebtn" destination="ATZ-VO-9Am" id="MQf-ia-6PD"/>
                         <outlet property="wantedbtn" destination="Lfu-n7-Vtk" id="zJ0-rb-Kdz"/>
                     </connections>
                 </viewController>
