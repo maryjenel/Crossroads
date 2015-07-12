@@ -10,6 +10,8 @@
 #import "ItemViewController.h"
 @interface ItemGridViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (strong, nonatomic) IBOutlet UICollectionView *itemCollectionView;
+@property NSMutableArray *itemArray;
+
 
 @end
 
@@ -17,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    _itemArray = [NSMutableArray new];
     
     
 }
