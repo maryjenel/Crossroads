@@ -89,11 +89,11 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Rg9-7b-3GM">
-                                <rect key="frame" x="0.0" y="138" width="320" height="355"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="429"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="8B6-5E-y8Q"/>
-                                    <constraint firstAttribute="height" constant="355" id="8sM-d6-Gse"/>
+                                    <constraint firstAttribute="height" constant="429" id="8sM-d6-Gse"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="faw-4c-cqe">
                                     <size key="itemSize" width="104" height="113"/>
@@ -142,16 +142,6 @@
                                     <outlet property="delegate" destination="c7l-av-qfx" id="Q6D-ii-ROc"/>
                                 </connections>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select an item to trade" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejz-kG-Of8">
-                                <rect key="frame" x="16" y="80" width="288" height="41"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="41" id="3Oh-3C-i9F"/>
-                                    <constraint firstAttribute="width" constant="288" id="Pnn-Gd-bBN"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -159,11 +149,6 @@
                             <constraint firstItem="Rg9-7b-3GM" firstAttribute="leading" secondItem="s3d-7p-WPP" secondAttribute="leading" id="FWd-UJ-m1r"/>
                             <constraint firstItem="lpd-7V-x0i" firstAttribute="top" secondItem="OVf-j8-3h4" secondAttribute="bottom" id="MUP-sT-cfl"/>
                             <constraint firstAttribute="trailing" secondItem="Rg9-7b-3GM" secondAttribute="trailing" id="NFi-Et-T8A"/>
-                            <constraint firstAttribute="centerX" secondItem="ejz-kG-Of8" secondAttribute="centerX" id="RgR-zX-FIB"/>
-                            <constraint firstItem="Rg9-7b-3GM" firstAttribute="top" secondItem="ejz-kG-Of8" secondAttribute="bottom" constant="17" id="TV6-rO-yb6"/>
-                            <constraint firstItem="ejz-kG-Of8" firstAttribute="leading" secondItem="s3d-7p-WPP" secondAttribute="leadingMargin" id="YRP-Tv-7Tr"/>
-                            <constraint firstItem="ejz-kG-Of8" firstAttribute="trailing" secondItem="s3d-7p-WPP" secondAttribute="trailingMargin" id="c1h-q8-gjN"/>
-                            <constraint firstItem="ejz-kG-Of8" firstAttribute="top" secondItem="ejS-KY-6sw" secondAttribute="bottom" constant="16" id="gvN-ef-kg6"/>
                             <constraint firstItem="OVf-j8-3h4" firstAttribute="leading" secondItem="s3d-7p-WPP" secondAttribute="leading" id="iSV-JS-Oba"/>
                             <constraint firstAttribute="trailing" secondItem="OVf-j8-3h4" secondAttribute="trailing" id="o2k-55-2Az"/>
                         </constraints>
@@ -173,7 +158,6 @@
                         <outlet property="itemCollectionView" destination="Rg9-7b-3GM" id="nY5-eZ-Yb3"/>
                         <outlet property="itemGridView" destination="s3d-7p-WPP" id="kQY-Rj-Pc8"/>
                         <outlet property="otherBtn" destination="OVf-j8-3h4" id="0GX-bz-hQ8"/>
-                        <outlet property="selectItemlbl" destination="ejz-kG-Of8" id="lYg-oi-IKa"/>
                         <segue destination="LgV-Nr-uwT" kind="push" identifier="itemSelectedSegue" id="8wn-Z3-log"/>
                     </connections>
                 </viewController>
@@ -307,6 +291,7 @@
                         <outlet property="itemImageView" destination="3VQ-e4-EDE" id="P9g-VR-H8a"/>
                         <outlet property="itemLabel" destination="p9O-0N-gNm" id="FEl-gJ-0lV"/>
                         <outlet property="itemOfferingsTableView" destination="Oia-nu-O8E" id="kNI-0h-D42"/>
+                        <outlet property="marquee" destination="FAT-v8-qpy" id="BMX-nL-X0H"/>
                         <outlet property="weather_line" destination="u2R-zA-qY6" id="ksI-3z-qS0"/>
                     </connections>
                 </viewController>
