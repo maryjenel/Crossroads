@@ -79,7 +79,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     OfferingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"OfferingCell"];
-
+    PFObject *item = [all_offerings objectAtIndex:indexPath.row];
+    cell.userAvatarImageView.image = self.itemImageView.image;
+    cell.offeringTextLabel.text = item[@"description"];
+    cell.offeringDistanceLabel.text = item[@"distance"];
     return cell;
 }
 
