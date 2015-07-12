@@ -8,6 +8,9 @@
 
 #import "InitialViewController.h"
 #import <Parse/Parse.h>
+#import "ItemGridViewController.h"
+
+
 @interface InitialViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *wantedbtn;
 @property (weak, nonatomic) IBOutlet UIButton *tradebtn;
@@ -21,21 +24,27 @@
 }
 
 
-- (IBAction)onWantedBtnSelected:(UIButton *)sender
+- (IBAction)onWantedButtonSelected:(UIButton *)sender
 {
-    PFObject *user = [PFObject objectWithClassName:@"User"];
-    user[@"isRequesting"] = @"Yes";
-
-    PFObject *wanted = [PFObject objectWithClassName:@"Request"];
-   // wanted[@"user"] = [PFUser currentUser];
+    //Should really just pass that the user is requesting something
 }
-- (IBAction)onTradeBtnSelected:(UIButton *)sender
-{
-    PFObject *user = [PFObject objectWithClassName:@"User"];
-    user[@"isOffering"] = @"Yes";
 
-    PFObject *wanted = [PFObject objectWithClassName:@"Request"];
-  //  wanted[@"user"] = [PFUser currentUser];
+- (IBAction)onTradeButtonSelected:(UIButton *)sender
+{
+    //Should really just pass that the user is offering something
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UIButton *)sender
+{
+    // Wanted button has tag 0
+    if (sender.tag == 0)
+    {
+        // pass that the user is requesting something to next view controller
+    }
+    else
+    {
+        // pass that the user is offering something to next view controller
+    }
 }
 
 @end
