@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "CRGracieNote.h"
 #import <Parse/Parse.h>
 #import "LogInViewController.h"
 #import "InitialViewController.h"
@@ -37,6 +38,7 @@
     {
         [self showLogInAnimated:YES];
     }
+    [CRGracieNote register_with_gracie];
     return YES;
 }
 
