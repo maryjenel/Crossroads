@@ -44,12 +44,24 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *offerings, NSError *error) {
         if (!error){
             all_offerings = [NSArray arrayWithArray:offerings];
+            if (all_offerings.count == 0) {
+                self.itemOfferingsTableView.hidden = YES;
+                CGRect noItemsFrame = self.itemOfferingsTableView.frame;
+                UIImageView *n = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"Empty"]];
+                n.frame = noItemsFrame;
+                [self.view addSubview:n];
+            }
             [self.itemOfferingsTableView reloadData];
         } else {
             // Log details of the failure
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
+    
+    
+    
+    
+
     
 }
 
