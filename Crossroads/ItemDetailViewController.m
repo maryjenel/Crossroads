@@ -20,13 +20,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.detailImageView.image = self.item.itemImage;
-    // Do any additional setup after loading the view.
-}
+    UIColor *red = [UIColor colorWithRed:.93 green:.35 blue:.17 alpha:1];
+    UIColor *blue = [UIColor colorWithRed:.29 green:.84 blue:.84 alpha:1];
+    if ([SearchItem isRequestWanted]) {
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+        [self.view setBackgroundColor:red];
+    }
+    else
+    {
+        [self.view setBackgroundColor:blue];
+    }
+
+    }
+
+
 
 - (IBAction)onTradeButtonTapped:(id)sender
 {
