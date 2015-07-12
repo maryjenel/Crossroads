@@ -26,6 +26,7 @@
     UIColor *red = [UIColor colorWithRed:.93 green:.35 blue:.17 alpha:1];
     UIColor *blue = [UIColor colorWithRed:.29 green:.84 blue:.84 alpha:1];
     self.longDescriptionTextView.text = self.item[@"longDescription"];
+    [self.longDescriptionTextView setFont:[UIFont systemFontOfSize:17]];
     if ([SearchItem isRequestWanted]) {
         self.detailImageView.image = self.searchItem.itemImage;
         // Do any additional setup after loading the view.

@@ -331,7 +331,7 @@
                                     <action selector="otherBtnClicked:" destination="c7l-av-qfx" eventType="touchUpInside" id="1HY-EA-iSZ"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Short Description" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2ai-jQ-Qtt">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Short text of what you want" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2ai-jQ-Qtt">
                                 <rect key="frame" x="16" y="230" width="288" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="1DU-MP-uVS"/>
@@ -360,7 +360,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Type a longer description of what you have and what you're looking for here!" translatesAutoresizingMaskIntoConstraints="NO" id="pAR-cH-IW0">
                                 <rect key="frame" x="16" y="268" width="288" height="217"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
                             </textView>
                         </subviews>
@@ -445,7 +445,7 @@
                                 <rect key="frame" x="16" y="253" width="288" height="254"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">I have a wide-brimmed hat 👒 that I'm not currently using. I'm willing to lend it out for the day if you could bring me a couple of bottles of water.  Let me know if you're willing to trade! 😊</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
