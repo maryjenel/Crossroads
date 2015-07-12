@@ -389,7 +389,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="onSignUpButtonTapped:" destination="OpP-SO-Ydw" eventType="touchUpInside" id="qWe-TN-VhJ"/>
                                     <segue destination="twh-e1-XrW" kind="push" id="3Vp-3f-b5D"/>
                                 </connections>
                             </button>
@@ -428,7 +427,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sRA-BW-EJX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="162" y="-283"/>
+            <point key="canvasLocation" x="162" y="-358"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="fnZ-zz-RYc">
@@ -521,7 +520,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fZ9-Le-0NU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="538" y="-283"/>
+            <point key="canvasLocation" x="537" y="-358"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -531,6 +530,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="AGY-QS-g1U"/>
-        <segue reference="tRg-Ie-NMK"/>
+        <segue reference="2Ug-BS-lLR"/>
     </inferredMetricsTieBreakers>
 </document>
