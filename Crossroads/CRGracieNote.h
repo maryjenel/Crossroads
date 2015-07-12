@@ -11,4 +11,5 @@
 @interface CRGracieNote : NSObject
 
 +(void)register_with_gracie;
+-(NSString*)artist_data;
 @end

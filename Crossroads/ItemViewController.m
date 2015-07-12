@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Mary Jenel Myers. All rights reserved.
 //
 #import <Parse/Parse.h>
+#import "MarqueeLabel.h"
 #import "ItemViewController.h"
 #import "OfferingTableViewCell.h"
 #import "ItemDetailViewController.h"
@@ -17,6 +18,7 @@
 {
     __weak IBOutlet UILabel *weather_line;
     __weak IBOutlet UIView *marquee;
+    CRGracieNote *worker;
     NSArray *all_offerings;
 }
 
@@ -26,6 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    worker = [CRGracieNote new];
     self.itemOfferingsTableView.userInteractionEnabled = YES;
     self.itemLabel.text = self.searchItem.itemName;
     self.itemImageView.image = self.searchItem.itemImage;
@@ -62,6 +65,10 @@
     NSString *display_me = [NSString stringWithFormat:@"Right now: %@ %@",
                             current_temp.floatValue > 60 ? @"☀️" : @"☁️", weather_string];
     weather_line.text = display_me;
+    MarqueeLabel *l = [[MarqueeLabel alloc] initWithFrame:marquee.frame duration:30.0 andFadeLength:10.0];
+
+    l.text = [worker artist_data];
+    [self.view addSubview:l];
 }
 
 - (void)didReceiveMemoryWarning {
