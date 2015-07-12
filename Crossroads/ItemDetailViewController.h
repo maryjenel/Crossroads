@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ItemDetailViewController : UIViewController
+@property NSString *user;
+@property NSString *item;
 
 @end
