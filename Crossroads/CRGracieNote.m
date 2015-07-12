@@ -37,9 +37,10 @@ static NSString *query_info = @"<QUERIES><LANG>eng</LANG><AUTH><CLIENT>%@</CLIEN
                                                                                       error:nil]
                                           encoding: NSUTF8StringEncoding];
     raw = [raw stringByReplacingOccurrencesOfString:@"&" withString:@""];
-    raw = [raw stringByReplacingOccurrencesOfString:@"amp" withString:@""];
+    raw = [raw stringByReplacingOccurrencesOfString:@"amp" withString:@"&"];
     raw = [raw stringByReplacingOccurrencesOfString:@";" withString:@""];
-
+    raw = [raw stringByReplacingOccurrencesOfString:@"apos" withString:@"'"];
+    
     NSRegularExpression *regex = [[NSRegularExpression alloc] initWithPattern:@"<TITLE>(.*)</TITLE>" options:NSRegularExpressionCaseInsensitive error:nil];
     NSArray *matches = [regex matchesInString:raw options:0 range:NSMakeRange(0, raw.length)];
     NSMutableArray *hits = [NSMutableArray new];
@@ -48,7 +49,7 @@ static NSString *query_info = @"<QUERIES><LANG>eng</LANG><AUTH><CLIENT>%@</CLIEN
         NSString *a_match = [raw substringWithRange:match_range];
         [hits addObject:a_match];
     }
-    return [hits componentsJoinedByString:@"  🎶  "];
+    return [@"Today's Headliner - The Black Keys:     " stringByAppendingString:[hits componentsJoinedByString:@"  🎶  "]];
 }
 
 +(void)register_with_gracie
