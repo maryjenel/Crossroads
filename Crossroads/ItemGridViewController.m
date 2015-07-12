@@ -86,6 +86,7 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(SearchItem *)sender
 {
     ItemViewController *vc = segue.destinationViewController;
+    
     vc.searchItem = sender;
     //vc.wanted = self.isRequestedWanted;
 }

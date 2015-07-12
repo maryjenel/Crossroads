@@ -8,7 +8,12 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
-@interface AppDelegate ()
+#import "LogInViewController.h"
+#import "InitialViewController.h"
+@interface AppDelegate () <UINavigationControllerDelegate>
+
+@property LogInViewController *loginVC;
+@property UINavigationController *rootNavigationController;
 
 @end
 
@@ -21,7 +26,35 @@
                   clientKey:@"rfo7qUaU9fprNsOW55fQQ0adLlF4MzgYIulSLv5B"];
 
 
+    self.rootNavigationController = (UINavigationController *)self.window.rootViewController;
+    self.rootNavigationController.delegate = self;
+
+    if ([PFUser currentUser])
+    {
+        [self showInitialViewController];
+    }
+    else
+    {
+        [self showLogInAnimated:YES];
+    }
     return YES;
+}
+
+#pragma mark - UI
+
+- (void)showLogInAnimated:(BOOL)animated
+{
+    LogInViewController *loginViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"LoginViewController"];
+    loginViewController.successLoginBlock = ^(){
+        [self showInitialViewController];
+    };
+    [self.rootNavigationController setViewControllers:@[loginViewController] animated:animated];
+}
+
+- (void)showInitialViewController
+{
+    InitialViewController *initialViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"InitialViewController"];
+    [self.rootNavigationController setViewControllers:@[initialViewController] animated:YES];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

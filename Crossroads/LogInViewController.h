@@ -10,4 +10,6 @@
 
 @interface LogInViewController : UIViewController
 
+@property (nonatomic, copy) void (^successLoginBlock)();
+
 @end
