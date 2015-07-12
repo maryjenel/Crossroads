@@ -14,7 +14,6 @@
 @interface InitialViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *wantedbtn;
 @property (weak, nonatomic) IBOutlet UIButton *tradebtn;
-
 @end
 
 @implementation InitialViewController
@@ -24,26 +23,18 @@
 }
 
 
-- (IBAction)onWantedButtonSelected:(UIButton *)sender
-{
-    //Should really just pass that the user is requesting something
-}
-
-- (IBAction)onTradeButtonSelected:(UIButton *)sender
-{
-    //Should really just pass that the user is offering something
-}
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UIButton *)sender
 {
+    ItemGridViewController *vc = [segue destinationViewController];
     // Wanted button has tag 0
     if (sender.tag == 0)
     {
-        // pass that the user is requesting something to next view controller
-    }
+        vc.isRequestedWanted = YES;
+        }
     else
     {
-        // pass that the user is offering something to next view controller
+        vc.isRequestedWanted = NO;
     }
 }
 
