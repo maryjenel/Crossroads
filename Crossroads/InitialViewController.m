@@ -19,6 +19,11 @@
 
 - (void)viewDidLoad
 {    [super viewDidLoad];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{ NSForegroundColorAttributeName: [UIColor blackColor],
+                                                                       NSFontAttributeName: [UIFont fontWithName:@"Avenir" size:20.0f]                                                                      }];
+    [self.navigationItem setTitle: @"Crossroads"];
+
+    
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UIButton *)sender

@@ -30,15 +30,25 @@
     [self.itemCollectionView reloadData];
     UIColor *red = [UIColor colorWithRed:.93 green:.35 blue:.17 alpha:1];
     UIColor *blue = [UIColor colorWithRed:.29 green:.84 blue:.84 alpha:1];
+    [self.navigationController.navigationBar setTitleTextAttributes:@{ NSForegroundColorAttributeName: [UIColor blackColor],
+                                                                      NSFontAttributeName: [UIFont fontWithName:@"Avenir" size:20.0f]                                                                      }];
+    [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
+
     
     
     if (self.isRequestedWanted) {
         _itemCollectionView.backgroundColor = red;
         _otherBtn.backgroundColor = blue;
+        self.navigationItem.title = @"Wanted";
+       // [self.navigationController.navigationBar setBarTintColor: blue];
     }
     else {
         _itemCollectionView.backgroundColor = blue;
         _otherBtn.backgroundColor = red;
+        [self.navigationItem setTitle:@"Trade"];
+       // [self.navigationController.navigationBar setBarTintColor: red];
+
+
     }
     
 }
