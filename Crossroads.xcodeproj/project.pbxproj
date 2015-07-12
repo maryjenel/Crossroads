@@ -43,6 +43,8 @@
 		620114F71B51CDEC00EDF945 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 620114F61B51CDEC00EDF945 /* Accounts.framework */; };
 		620114F91B51CDF700EDF945 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 620114F81B51CDF700EDF945 /* Social.framework */; };
 		6201150B1B51E9A200EDF945 /* SearchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6201150A1B51E9A200EDF945 /* SearchItem.m */; };
+		6D08B8271B52504E0059C513 /* CRGracieNote.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D08B8261B52504E0059C513 /* CRGracieNote.m */; };
+		6D08B82A1B5253310059C513 /* MarqueeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D08B8291B5253310059C513 /* MarqueeLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +109,10 @@
 		620114F81B51CDF700EDF945 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		620115091B51E9A200EDF945 /* SearchItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchItem.h; sourceTree = "<group>"; };
 		6201150A1B51E9A200EDF945 /* SearchItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchItem.m; sourceTree = "<group>"; };
+		6D08B8251B52504E0059C513 /* CRGracieNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRGracieNote.h; sourceTree = "<group>"; };
+		6D08B8261B52504E0059C513 /* CRGracieNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRGracieNote.m; sourceTree = "<group>"; };
+		6D08B8281B5253310059C513 /* MarqueeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarqueeLabel.h; sourceTree = "<group>"; };
+		6D08B8291B5253310059C513 /* MarqueeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarqueeLabel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +275,10 @@
 			children = (
 				60A8BABF1B521B2F003DD2C8 /* CRWeather.h */,
 				60A8BAC01B521B2F003DD2C8 /* CRWeather.m */,
+				6D08B8251B52504E0059C513 /* CRGracieNote.h */,
+				6D08B8261B52504E0059C513 /* CRGracieNote.m */,
+				6D08B8281B5253310059C513 /* MarqueeLabel.h */,
+				6D08B8291B5253310059C513 /* MarqueeLabel.m */,
 				620115091B51E9A200EDF945 /* SearchItem.h */,
 				6201150A1B51E9A200EDF945 /* SearchItem.m */,
 			);
@@ -380,8 +390,10 @@
 				60A8BAC71B521EEF003DD2C8 /* SignUpViewController.m in Sources */,
 				60ED44A21B51BA1600D068DD /* ItemViewController.m in Sources */,
 				60ED44AD1B51D6A700D068DD /* OfferingTableViewCell.m in Sources */,
+				6D08B82A1B5253310059C513 /* MarqueeLabel.m in Sources */,
 				60ED44A51B51BA2B00D068DD /* ItemDetailViewController.m in Sources */,
 				60A8BACA1B521F0D003DD2C8 /* LogInViewController.m in Sources */,
+				6D08B8271B52504E0059C513 /* CRGracieNote.m in Sources */,
 				620114BA1B50E03600EDF945 /* main.m in Sources */,
 				620114C31B50E03600EDF945 /* InitialViewController.m in Sources */,
 				620114C01B50E03600EDF945 /* Crossroads.xcdatamodeld in Sources */,

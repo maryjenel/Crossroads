@@ -11,6 +11,7 @@
 #import "ItemDetailViewController.h"
 #import "SearchItem.h"
 #import "CRWeather.h"
+#import "CRGracieNote.h"
 
 @interface ItemViewController ()<UITableViewDataSource, UITableViewDelegate>
 {
