@@ -10,6 +10,7 @@
 #import "OfferingTableViewCell.h"
 #import "ItemDetailViewController.h"
 #import "SearchItem.h"
+#import <Parse/Parse.h>
 
 @interface ItemViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UILabel *itemLabel;
@@ -24,10 +25,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 
     self.itemLabel.text = self.searchItem.itemName;
     self.itemImageView.image = self.searchItem.itemImage;
+
+    // fetch offerings from Parse
+    PFQuery *query = [PFQuery queryWithClassName:@"Offering"];
+    [query whereKey:@"item" equalTo:self.searchItem.itemName];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *offerings, NSError *error) {
+        if (!error)
+            //Grabbed the offerings
+        {
+
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,9 +52,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     OfferingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"OfferingCell"];
-    //cell.userAvatarImageView.image = image from imvu
-    //cell.offeringDistanceLabel.text = distance from user
-    //cell.offeringTextLabel.text = description
+
     return cell;
 }
 
