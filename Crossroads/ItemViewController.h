@@ -7,10 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+
+@class CRWeather;
 @class SearchItem;
 
 @interface ItemViewController : UIViewController
 
 @property SearchItem *searchItem;
+@property (strong, nonatomic) IBOutlet UILabel *itemLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *itemImageView;
+@property (strong, nonatomic) IBOutlet UITableView *itemOfferingsTableView;
+@property (nonatomic, strong) CRWeather *data_model;
+
+-(void)weather_data:(NSDictionary*)j_data;
 
 @end

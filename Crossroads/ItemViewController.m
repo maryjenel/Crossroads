@@ -5,16 +5,15 @@
 //  Created by Yi-Chin Sun on 7/11/15.
 //  Copyright (c) 2015 Mary Jenel Myers. All rights reserved.
 //
-
+#import <Parse/Parse.h>
 #import "ItemViewController.h"
 #import "OfferingTableViewCell.h"
 #import "ItemDetailViewController.h"
 #import "SearchItem.h"
+#import "CRWeather.h"
 
 @interface ItemViewController ()<UITableViewDataSource, UITableViewDelegate>
-@property (strong, nonatomic) IBOutlet UILabel *itemLabel;
-@property (strong, nonatomic) IBOutlet UIImageView *itemImageView;
-@property (strong, nonatomic) IBOutlet UITableView *itemOfferingsTableView;
+
 @property NSArray *offeringUsersArray;
 
 
@@ -24,10 +23,35 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 
     self.itemLabel.text = self.searchItem.itemName;
     self.itemImageView.image = self.searchItem.itemImage;
+
+    // fetch offerings from Parse
+    PFQuery *query = [PFQuery queryWithClassName:@"Offering"];
+    [query whereKey:@"item" equalTo:self.searchItem.itemName];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *offerings, NSError *error) {
+        if (!error)
+            //Grabbed the offerings
+        {
+
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+}
+
+-(void)awakeFromNib
+{
+    //    37.8, -122.4]
+    self.data_model = [[CRWeather alloc] init_with_parent:self];
+    [self.data_model do_pull_data:37.8 long_:-122.4];
+}
+
+-(void)weather_data:(NSDictionary *)j_data
+{
+    NSLog(@"Called: %@", j_data);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,9 +62,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     OfferingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"OfferingCell"];
-    //cell.userAvatarImageView.image = image from imvu
-    //cell.offeringDistanceLabel.text = distance from user
-    //cell.offeringTextLabel.text = description
+
     return cell;
 }
 
