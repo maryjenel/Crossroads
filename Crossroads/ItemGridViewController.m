@@ -23,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addingSearchItems];
-
+    [self.itemCollectionView reloadData];
     
 }
 
@@ -45,16 +45,23 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    ItemCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
-
+    ItemCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ItemCell" forIndexPath:indexPath];
+    SearchItem *item = [self.itemArray objectAtIndex:indexPath.row];
+    cell.itemImageView.image = item.itemImage;
+    cell.itemLabel.text = item.itemName;
     return cell;
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 0;
+    return self.itemArray.count;
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(ItemCollectionViewCell*)sender
+{
+    ItemViewController *vc = segue.destinationViewController;
+    vc.searchItem = [self.itemArray objectAtIndex:[[self.itemCollectionView indexPathForCell:sender] row]];
+}
 
 /*
 #pragma mark - Navigation
