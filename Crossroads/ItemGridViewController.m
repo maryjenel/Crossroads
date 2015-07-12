@@ -51,12 +51,15 @@
     SearchItem *battery =[[SearchItem alloc]initWithName:@"Battery" itemImage:[UIImage imageNamed:@"Battery"]];
     SearchItem *earphones = [[SearchItem alloc]initWithName:@"Earphones" itemImage:[UIImage imageNamed:@"Earphones"]];
     SearchItem *water = [[SearchItem alloc]initWithName:@"Water" itemImage:[UIImage imageNamed:@"Water"]];
-    SearchItem *umbrella = [[SearchItem alloc]initWithName:@"Umbrella" itemImage:[UIImage imageNamed:@"Umbrella"]];
-    SearchItem *cigs = [[SearchItem alloc]initWithName:@"Cigarettes" itemImage:[UIImage imageNamed:@"Cigarettes"]];
+    SearchItem *poncho = [[SearchItem alloc]initWithName:@"Poncho" itemImage:[UIImage imageNamed:@"Poncho"]];
+    SearchItem *lighter = [[SearchItem alloc]initWithName:@"Lighter" itemImage:[UIImage imageNamed:@"Lighter"]];
     SearchItem *paperRoll = [[SearchItem alloc]initWithName:@"Toilet Paper" itemImage:[UIImage imageNamed:@"Toilet Paper"]];
     SearchItem *sunscreen = [[SearchItem alloc]initWithName:@"Sunscreen" itemImage:[UIImage imageNamed:@"Sunscreen"]];
+    SearchItem *cigarette = [[SearchItem alloc]initWithName:@"Cigs" itemImage:[UIImage imageNamed:@"Cigarette"]];
+    SearchItem *blanket = [[SearchItem alloc]initWithName:@"Blanket" itemImage:[UIImage imageNamed:@"Blanket"]];
+    SearchItem *earplugs = [[SearchItem alloc]initWithName:@"Earplugs" itemImage:[UIImage imageNamed:@"Earplugs"]];
 
-    self.itemArray = [NSMutableArray arrayWithObjects:sunglasses,hat,battery,earphones,water,umbrella,cigs,paperRoll,sunscreen, nil];
+    self.itemArray = [NSMutableArray arrayWithObjects:sunglasses,hat,battery,earphones,water,poncho,lighter,paperRoll,sunscreen, cigarette, blanket, earplugs, nil];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
