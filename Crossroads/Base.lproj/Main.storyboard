@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="44w-IR-JEe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="44w-IR-JEe">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -177,18 +177,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p9O-0N-gNm">
-                                <rect key="frame" x="16" y="72" width="288" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="8eI-j2-AoZ"/>
-                                    <constraint firstAttribute="width" constant="288" id="Zdc-yG-D2w"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="54" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Oia-nu-O8E">
-                                <rect key="frame" x="0.0" y="289" width="320" height="272"/>
+                                <rect key="frame" x="0.0" y="258" width="320" height="303"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="OfferingCell" rowHeight="54" id="qMG-15-OqB" customClass="OfferingTableViewCell">
@@ -248,24 +238,42 @@
                                 </connections>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3VQ-e4-EDE">
-                                <rect key="frame" x="80" y="107" width="160" height="160"/>
+                                <rect key="frame" x="110" y="136" width="100" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="160" id="QXA-jU-L8o"/>
-                                    <constraint firstAttribute="height" constant="160" id="oEq-lh-ai8"/>
+                                    <constraint firstAttribute="width" constant="100" id="QXA-jU-L8o"/>
+                                    <constraint firstAttribute="height" constant="100" id="oEq-lh-ai8"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u2R-zA-qY6">
+                                <rect key="frame" x="128" y="72" width="64" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p9O-0N-gNm">
+                                <rect key="frame" x="16" y="101" width="288" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="8eI-j2-AoZ"/>
+                                    <constraint firstAttribute="width" constant="288" id="Zdc-yG-D2w"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="3VQ-e4-EDE" secondAttribute="centerX" id="GX3-F8-UOV"/>
                             <constraint firstItem="1I4-iw-vst" firstAttribute="top" secondItem="Oia-nu-O8E" secondAttribute="bottom" constant="7" id="HIf-jx-egS"/>
+                            <constraint firstAttribute="centerX" secondItem="u2R-zA-qY6" secondAttribute="centerX" id="UZ6-Fv-zwS"/>
                             <constraint firstItem="Oia-nu-O8E" firstAttribute="top" secondItem="3VQ-e4-EDE" secondAttribute="bottom" constant="22" id="YeB-SV-ipq"/>
                             <constraint firstItem="p9O-0N-gNm" firstAttribute="trailing" secondItem="2E2-SF-yir" secondAttribute="trailingMargin" id="dIR-WL-1bR"/>
+                            <constraint firstItem="u2R-zA-qY6" firstAttribute="top" secondItem="Cmj-da-7F1" secondAttribute="bottom" constant="8" id="eGP-fC-pEZ"/>
                             <constraint firstItem="Oia-nu-O8E" firstAttribute="leading" secondItem="2E2-SF-yir" secondAttribute="leading" id="jp2-X6-ZuR"/>
                             <constraint firstItem="p9O-0N-gNm" firstAttribute="leading" secondItem="2E2-SF-yir" secondAttribute="leadingMargin" id="pBH-r4-ZeY"/>
                             <constraint firstItem="3VQ-e4-EDE" firstAttribute="top" secondItem="p9O-0N-gNm" secondAttribute="bottom" id="riJ-3W-hKN"/>
                             <constraint firstAttribute="trailing" secondItem="Oia-nu-O8E" secondAttribute="trailing" id="wud-rU-l0u"/>
-                            <constraint firstItem="p9O-0N-gNm" firstAttribute="top" secondItem="Cmj-da-7F1" secondAttribute="bottom" constant="8" id="yy0-bs-Xhq"/>
+                            <constraint firstItem="p9O-0N-gNm" firstAttribute="top" secondItem="u2R-zA-qY6" secondAttribute="bottom" constant="8" id="ylv-mB-kAl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jmE-XT-uR7"/>
@@ -273,6 +281,7 @@
                         <outlet property="itemImageView" destination="3VQ-e4-EDE" id="P9g-VR-H8a"/>
                         <outlet property="itemLabel" destination="p9O-0N-gNm" id="FEl-gJ-0lV"/>
                         <outlet property="itemOfferingsTableView" destination="Oia-nu-O8E" id="kNI-0h-D42"/>
+                        <outlet property="weather_line" destination="u2R-zA-qY6" id="ksI-3z-qS0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mzi-CL-VTX" userLabel="First Responder" sceneMemberID="firstResponder"/>

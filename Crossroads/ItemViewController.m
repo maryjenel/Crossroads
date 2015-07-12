@@ -13,6 +13,10 @@
 #import "CRWeather.h"
 
 @interface ItemViewController ()<UITableViewDataSource, UITableViewDelegate>
+{
+    __weak IBOutlet UILabel *weather_line;
+    
+}
 
 @property NSArray *offeringUsersArray;
 
@@ -23,10 +27,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    self.itemOfferingsTableView.userInteractionEnabled = YES;
     self.itemLabel.text = self.searchItem.itemName;
     self.itemImageView.image = self.searchItem.itemImage;
-
     // fetch offerings from Parse
     PFQuery *query = [PFQuery queryWithClassName:@"Offering"];
     [query whereKey:@"item" equalTo:self.searchItem.itemName];
@@ -51,7 +54,8 @@
 
 -(void)weather_data:(NSDictionary *)j_data
 {
-    NSLog(@"Called: %@", j_data);
+    NSString *weather_string = [(NSDictionary*)[j_data objectForKey:@"current_observation"] objectForKey:@"feelslike_string"];
+    NSLog(@"%@", weather_string);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -71,11 +75,15 @@
     return self.offeringUsersArray.count;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"Clicked");
+}
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(OfferingTableViewCell *)sender
 {
     ItemDetailViewController *vc = segue.destinationViewController;
     vc.user = [self.offeringUsersArray objectAtIndex:[[self.itemOfferingsTableView indexPathForCell:sender] row]];
-    vc.item = self.itemLabel.text;
 }
 
 /*
