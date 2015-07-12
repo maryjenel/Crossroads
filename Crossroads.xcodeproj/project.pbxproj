@@ -13,6 +13,7 @@
 		6070766D1B51DF5E006D3C95 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 607076671B51DF5E006D3C95 /* ParseFacebookUtils.framework */; };
 		6070766E1B51DF5E006D3C95 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 607076681B51DF5E006D3C95 /* ParseFacebookUtilsV4.framework */; };
 		6070766F1B51DF5E006D3C95 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 607076691B51DF5E006D3C95 /* ParseUI.framework */; };
+		60A8BAC11B521B2F003DD2C8 /* CRWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A8BAC01B521B2F003DD2C8 /* CRWeather.m */; };
 		60ED449F1B51B9AC00D068DD /* ItemGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60ED449E1B51B9AC00D068DD /* ItemGridViewController.m */; };
 		60ED44A21B51BA1600D068DD /* ItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60ED44A11B51BA1600D068DD /* ItemViewController.m */; };
 		60ED44A51B51BA2B00D068DD /* ItemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60ED44A41B51BA2B00D068DD /* ItemDetailViewController.m */; };
@@ -59,6 +60,8 @@
 		607076671B51DF5E006D3C95 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtils.framework; path = "Crossroads/parse-library-1/ParseFacebookUtils.framework"; sourceTree = "<group>"; };
 		607076681B51DF5E006D3C95 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtilsV4.framework; path = "Crossroads/parse-library-1/ParseFacebookUtilsV4.framework"; sourceTree = "<group>"; };
 		607076691B51DF5E006D3C95 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = "Crossroads/parse-library-1/ParseUI.framework"; sourceTree = "<group>"; };
+		60A8BABF1B521B2F003DD2C8 /* CRWeather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRWeather.h; sourceTree = "<group>"; };
+		60A8BAC01B521B2F003DD2C8 /* CRWeather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRWeather.m; sourceTree = "<group>"; };
 		60ED449D1B51B9AC00D068DD /* ItemGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemGridViewController.h; sourceTree = "<group>"; };
 		60ED449E1B51B9AC00D068DD /* ItemGridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemGridViewController.m; sourceTree = "<group>"; };
 		60ED44A01B51BA1600D068DD /* ItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemViewController.h; sourceTree = "<group>"; };
@@ -254,6 +257,8 @@
 		620115081B51E98100EDF945 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				60A8BABF1B521B2F003DD2C8 /* CRWeather.h */,
+				60A8BAC01B521B2F003DD2C8 /* CRWeather.m */,
 				620115091B51E9A200EDF945 /* SearchItem.h */,
 				6201150A1B51E9A200EDF945 /* SearchItem.m */,
 			);
@@ -370,6 +375,7 @@
 				620114C01B50E03600EDF945 /* Crossroads.xcdatamodeld in Sources */,
 				6201150B1B51E9A200EDF945 /* SearchItem.m in Sources */,
 				60ED449F1B51B9AC00D068DD /* ItemGridViewController.m in Sources */,
+				60A8BAC11B521B2F003DD2C8 /* CRWeather.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
