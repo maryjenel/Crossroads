@@ -13,9 +13,10 @@
 #import "CRWeather.h"
 
 @interface ItemViewController ()<UITableViewDataSource, UITableViewDelegate>
-
-@property NSArray *offeringUsersArray;
-
+{
+    __weak IBOutlet UILabel *weather_line;
+    NSArray *all_offerings;
+}
 
 @end
 
@@ -23,18 +24,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    self.itemOfferingsTableView.userInteractionEnabled = YES;
     self.itemLabel.text = self.searchItem.itemName;
     self.itemImageView.image = self.searchItem.itemImage;
-
     // fetch offerings from Parse
     PFQuery *query = [PFQuery queryWithClassName:@"Offering"];
+    NSLog(@"%@", self.searchItem.itemName);
     [query whereKey:@"item" equalTo:self.searchItem.itemName];
     [query findObjectsInBackgroundWithBlock:^(NSArray *offerings, NSError *error) {
-        if (!error)
-            //Grabbed the offerings
-        {
-
+        if (!error){
+            all_offerings = [NSArray arrayWithArray:offerings];
+            [self.itemOfferingsTableView reloadData];
         } else {
             // Log details of the failure
             NSLog(@"Error: %@ %@", error, [error userInfo]);
@@ -44,14 +44,17 @@
 
 -(void)awakeFromNib
 {
-    //    37.8, -122.4]
     self.data_model = [[CRWeather alloc] init_with_parent:self];
     [self.data_model do_pull_data:37.8 long_:-122.4];
 }
 
 -(void)weather_data:(NSDictionary *)j_data
 {
-    NSLog(@"Called: %@", j_data);
+    NSString *weather_string = [(NSDictionary*)[j_data objectForKey:@"current_observation"] objectForKey:@"feelslike_string"];
+    NSNumber *current_temp = (NSNumber*)[(NSDictionary*)[j_data objectForKey:@"current_observation"] objectForKey:@"temp_f"];
+    NSString *display_me = [NSString stringWithFormat:@"Right now: %@ %@",
+                            current_temp.floatValue > 60 ? @"☀️" : @"☁️", weather_string];
+    weather_line.text = display_me;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -68,14 +71,18 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.offeringUsersArray.count;
+    return all_offerings.count;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"Clicked");
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(OfferingTableViewCell *)sender
 {
     ItemDetailViewController *vc = segue.destinationViewController;
-    vc.user = [self.offeringUsersArray objectAtIndex:[[self.itemOfferingsTableView indexPathForCell:sender] row]];
-    vc.item = self.itemLabel.text;
+    vc.user = [all_offerings objectAtIndex:[[self.itemOfferingsTableView indexPathForCell:sender] row]];
 }
 
 /*
