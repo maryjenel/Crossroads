@@ -10,4 +10,6 @@
 
 @interface SignUpViewController : UIViewController
 
+@property (nonatomic, copy) void (^successSignUpBlock)();
+
 @end

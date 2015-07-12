@@ -7,6 +7,8 @@
 //
 
 #import "SignUpViewController.h"
+#import "AppDelegate.h"
+#import <Parse/Parse.h>
 
 @interface SignUpViewController ()
 @property (strong, nonatomic) IBOutlet UITextField *usernameTextField;
@@ -22,23 +24,83 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
+    [self.view addGestureRecognizer:gestureRecognizer];
+    gestureRecognizer.cancelsTouchesInView = NO;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)hideKeyboard
+{
+    [self.usernameTextField resignFirstResponder];
+    [self.passwordTextField resignFirstResponder];
+    [self.verifyPasswordTextField resignFirstResponder];
+    [self.phoneNumberTextField resignFirstResponder];
+    [self.emailTextField resignFirstResponder];
 }
-- (IBAction)onSignUpButtonTapped:(id)sender {
+- (IBAction)onSignUpButtonTapped:(id)sender
+{
+    if ([self.emailTextField.text isEqualToString:@""])
+    {
+        [self showSignUpErrorAlertController:@"Error: Email missing" withMessage:@"Please enter an email."];
+    }
+    else if ([self.usernameTextField.text isEqualToString:@""])
+    {
+        [self showSignUpErrorAlertController:@"Error: Username Required" withMessage:@"Please enter a username."];
+    }
+    else if ([self.phoneNumberTextField.text isEqualToString:@""])
+    {
+        [self showSignUpErrorAlertController:@"Error: Phone number missing" withMessage:@"Please enter a phone number."];
+    }
+    else if([self.passwordTextField.text isEqualToString:@""])
+    {
+        [self showSignUpErrorAlertController:@"Error: Password missing" withMessage:@"Please enter a password."];
+    }
+    else if (![self.verifyPasswordTextField.text isEqualToString:self.passwordTextField.text])
+    {
+        [self showSignUpErrorAlertController:@"Error: Invalid Password" withMessage:@"Please make sure your passwords match."];
+    }
+    else
+    {
+        PFUser *user = [PFUser user];
+        user.username = self.usernameTextField.text;
+        user.password = self.passwordTextField.text;
+        user.email = self.emailTextField.text;
+
+        NSNumber *phoneNumber = [NSNumber numberWithInt:[self.phoneNumberTextField.text intValue]];
+        [user setObject:phoneNumber forKey:@"phoneNumber"];
+
+        [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+         {
+             if (!error)
+             {
+                 // Hooray! Let them use the app now.
+                 NSLog(@"Signed up as %@", [PFUser currentUser].username);
+                 self.successSignUpBlock();
+             }
+             else
+             {
+                 NSString *errorString = [error userInfo][@"error"];
+                 [self showSignUpErrorAlertController:@"Error" withMessage:errorString];
+             }
+         }];
+    }
+
 }
 
-/*
-#pragma mark - Navigation
+- (void)showSignUpErrorAlertController: (NSString *)errorTitle withMessage: (NSString*)errorMessage
+{
+    UIAlertController * alert= [UIAlertController
+                                alertControllerWithTitle:errorTitle
+                                message:errorMessage
+                                preferredStyle:UIAlertControllerStyleAlert];
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                               handler:^(UIAlertAction * action) {
+                                                   [alert dismissViewControllerAnimated:YES completion:nil];
+                                               }];
+    [alert addAction:ok];
+
+    [self presentViewController:alert animated:YES completion:nil];
 }
-*/
 
 @end
