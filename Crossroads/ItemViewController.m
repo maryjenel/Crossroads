@@ -16,6 +16,7 @@
 @interface ItemViewController ()<UITableViewDataSource, UITableViewDelegate>
 {
     __weak IBOutlet UILabel *weather_line;
+    __weak IBOutlet UIView *marquee;
     NSArray *all_offerings;
 }
 
