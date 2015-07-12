@@ -15,6 +15,8 @@
 @property (strong, nonatomic) IBOutlet UICollectionView *itemCollectionView;
 @property NSMutableArray *itemArray;
 
+@property (weak, nonatomic) IBOutlet UIButton *otherBtn;
+
 
 @end
 
@@ -57,10 +59,56 @@
     return self.itemArray.count;
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(ItemCollectionViewCell*)sender
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(SearchItem *)sender
 {
     ItemViewController *vc = segue.destinationViewController;
-    vc.searchItem = [self.itemArray objectAtIndex:[[self.itemCollectionView indexPathForCell:sender] row]];
+    vc.searchItem = sender;
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self performSegueWithIdentifier:@"itemSelectedSegue" sender: [self.itemArray objectAtIndex:indexPath.row]];
+}
+
+- (IBAction)otherBtnClicked:(id)sender {
+    [self setUpModal ];
+}
+
+- (void)setUpModal {
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Other" message:@"Enter Item Name" preferredStyle: UIAlertControllerStyleAlert];
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"Item Name";
+    }];
+    
+    
+    UIAlertAction* ok = [UIAlertAction
+                         actionWithTitle:@"OK"
+                         style:UIAlertActionStyleDefault
+                         handler:^(UIAlertAction * action)
+                         {
+                             UITextField *textField = alertController.textFields[0];
+                             [self sendOtherItemWithName:textField.text];
+                         }];
+    
+    UIAlertAction* cancel = [UIAlertAction
+                         actionWithTitle:@"Cancel"
+                         style:UIAlertActionStyleCancel
+                         handler:^(UIAlertAction * action)
+                         {
+                             
+                             
+                         }];
+    
+    [alertController addAction:cancel];
+    [alertController addAction:ok];
+    [self presentViewController:alertController animated:YES completion:nil];
+    
+}
+
+- (void)sendOtherItemWithName:(NSString*)name {
+    SearchItem *other = [[SearchItem alloc]initWithName:name itemImage:[UIImage imageNamed:@"Other"]];
+    [self performSegueWithIdentifier:@"itemSelectedSegue" sender:other];
 }
 
 /*
