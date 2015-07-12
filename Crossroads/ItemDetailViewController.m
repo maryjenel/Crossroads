@@ -7,8 +7,11 @@
 //
 
 #import "ItemDetailViewController.h"
+#import "SearchItem.h"
+#import <Parse/Parse.h>
 
 @interface ItemDetailViewController ()
+@property (strong, nonatomic) IBOutlet UIImageView *detailImageView;
 
 @end
 
@@ -16,12 +19,32 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.detailImageView.image = self.item.itemImage;
     // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)onTradeButtonTapped:(id)sender
+{
+    //Get in contact with user who is offering the item
+    
+    //Also push a Request/Offering object to Parse, depending on which flow led to this screen
+    NSString *className = self.isOffering ? @"Offering" : @"Request";
+    PFObject *offering = [PFObject objectWithClassName:className];
+    offering[@"item"] = self.item.itemName;
+    offering[@"user"] = [PFUser currentUser];
+
+    [offering saveInBackground];
+}
+
+- (IBAction)onStoreButtonTapped:(id)sender
+{
+    //Decide what to do when this is tapped. What if Outside Lands doesn't have an online store?
+    //Should we just pull up a map with the store's physical location?
 }
 
 /*
