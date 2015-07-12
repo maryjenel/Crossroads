@@ -27,6 +27,10 @@
     self.itemOfferingsTableView.userInteractionEnabled = YES;
     self.itemLabel.text = self.searchItem.itemName;
     self.itemImageView.image = self.searchItem.itemImage;
+    
+    _itemImageView.image = [_itemImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    [_itemImageView setTintColor:[UIColor blackColor]];
+    
     // fetch offerings from Parse
     PFQuery *query = [PFQuery queryWithClassName:@"Offering"];
     NSLog(@"%@", self.searchItem.itemName);
@@ -40,6 +44,7 @@
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
+    
 }
 
 -(void)awakeFromNib
