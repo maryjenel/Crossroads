@@ -7,7 +7,7 @@
 //
 
 #import "ItemGridViewController.h"
-
+#import "ItemViewController.h"
 @interface ItemGridViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (strong, nonatomic) IBOutlet UICollectionView *itemCollectionView;
 
@@ -18,6 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,6 +37,7 @@
 {
     return 0;
 }
+
 
 /*
 #pragma mark - Navigation
