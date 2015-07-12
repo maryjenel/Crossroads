@@ -15,5 +15,6 @@
 @property UIImage *itemImage;
 
 -(instancetype)initWithName: (NSString *)itemName itemImage:(UIImage *)itemImage;
-
++(void)isRequestWanted:(BOOL)wanted;
++(BOOL)isRequestWanted;
 @end

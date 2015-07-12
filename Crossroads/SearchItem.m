@@ -20,4 +20,14 @@
     return self;
 }
 
++(void)isRequestWanted:(BOOL)wanted
+{
+    [[NSUserDefaults standardUserDefaults]setBool:wanted forKey:@"isWanted"];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+}
+
++(BOOL)isRequestWanted
+{
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"isWanted"];
+}
 @end

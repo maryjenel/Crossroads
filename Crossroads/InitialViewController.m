@@ -9,6 +9,7 @@
 #import "InitialViewController.h"
 #import <Parse/Parse.h>
 #import "ItemGridViewController.h"
+#import "SearchItem.h"
 
 
 @interface InitialViewController ()
@@ -33,10 +34,12 @@
     if (sender.tag == 0)
     {
         vc.isRequestedWanted = YES;
+        [SearchItem isRequestWanted:YES];
         }
     else
     {
         vc.isRequestedWanted = NO;
+        [SearchItem isRequestWanted:NO];
     }
 }
 
