@@ -26,7 +26,9 @@
     [super viewDidLoad];
     [self addingSearchItems];
     [self.itemCollectionView reloadData];
-    
+    UIColor *red = [UIColor colorWithRed:238 green:88 blue:44 alpha:1];
+    UIColor *blue = [UIColor colorWithRed:73 green:213 blue:213 alpha:1];
+    _itemCollectionView.backgroundColor = self.bgcolor;
 }
 
 - (void)addingSearchItems

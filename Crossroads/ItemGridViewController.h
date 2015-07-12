@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ItemGridViewController : UIViewController
+@property UIColor *bgcolor;
 
 @end
