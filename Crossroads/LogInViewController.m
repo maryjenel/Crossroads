@@ -7,6 +7,9 @@
 //
 
 #import "LogInViewController.h"
+#import "SignUpViewController.h"
+#import "AppDelegate.h"
+#import <Parse/Parse.h>
 
 @interface LogInViewController ()
 @property (strong, nonatomic) IBOutlet UITextField *usernameTextField;
@@ -19,25 +22,76 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    if ([PFUser currentUser])
+    {
+        NSLog(@"Already logged in as %@", [PFUser currentUser].username);
+
+    }
+
+    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
+    [self.view addGestureRecognizer:gestureRecognizer];
+    gestureRecognizer.cancelsTouchesInView = NO;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-- (IBAction)onLoginButtonTapped:(id)sender {
-}
-- (IBAction)onSignUpButtonTapped:(id)sender {
+- (void)hideKeyboard
+{
+    [self.usernameTextField resignFirstResponder];
+    [self.passwordTextField resignFirstResponder];
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)onLoginButtonTapped:(id)sender
+{
+    if ([self.usernameTextField.text isEqualToString:@""])
+    {
+        [self showLoginErrorAlertController: @"Error: Username missing" withMessage:@"Please enter a username."];
+    }
+    else if([self.passwordTextField.text isEqualToString:@""])
+    {
+        [self showLoginErrorAlertController: @"Error: Password missing" withMessage:@"Please enter a password."];
+    }
+    else
+    {
+        [PFUser logInWithUsernameInBackground:self.usernameTextField.text password:self.passwordTextField.text block:^(PFUser *user, NSError *error)
+         {
+             if (!error)
+             {
+                 NSLog(@"Logged in as %@", [PFUser currentUser].username);
+                 // Clear all local cached data
+                 [PFQuery clearAllCachedResults];
+                 self.successLoginBlock();
+             }
+             else
+             {
+                 NSString *errorString = [error userInfo][@"error"];
+                 NSLog(@"%@", errorString);
+                 [self showLoginErrorAlertController:@"Error" withMessage:errorString];
+             }
+         }];
+    }
 }
-*/
+
+- (void)showLoginErrorAlertController: (NSString *)errorTitle withMessage: (NSString*)errorMessage
+{
+    UIAlertController *alert= [UIAlertController
+                               alertControllerWithTitle:errorTitle
+                               message:errorMessage
+                               preferredStyle:UIAlertControllerStyleAlert];
+
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                               handler:^(UIAlertAction * action) {
+                                                   [alert dismissViewControllerAnimated:YES completion:nil];
+                                               }];
+    [alert addAction:ok];
+
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    SignUpViewController *vc = segue.destinationViewController;
+    vc.successSignUpBlock = self.successLoginBlock;
+    
+}
 
 @end
