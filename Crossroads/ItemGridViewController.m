@@ -10,6 +10,7 @@
 #import "ItemViewController.h"
 #import "SearchItem.h"
 #import "ItemCollectionViewCell.h"
+#import "TradeCreateViewController.h"
 
 @interface ItemGridViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (strong, nonatomic) IBOutlet UICollectionView *itemCollectionView;
@@ -90,14 +91,25 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(SearchItem *)sender
 {
-    ItemViewController *vc = segue.destinationViewController;
-    
-    vc.searchItem = sender;
+    if (self.isRequestedWanted)
+    {
+        ItemViewController *vc = segue.destinationViewController;
+
+        vc.searchItem = sender;
+    }
+    else
+    {
+        TradeCreateViewController *vc = segue.destinationViewController;
+        vc.searchItem = sender;
+        
+    }
+    //vc.wanted = self.isRequestedWanted;
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self performSegueWithIdentifier:@"itemSelectedSegue" sender: [self.itemArray objectAtIndex:indexPath.row]];
+    NSString *segueIdentifier = self.isRequestedWanted ? @"requestSegue" : @"offeringSegue";
+    [self performSegueWithIdentifier:segueIdentifier sender: [self.itemArray objectAtIndex:indexPath.row]];
 }
 
 - (IBAction)otherBtnClicked:(id)sender {
@@ -137,18 +149,9 @@
 }
 
 - (void)sendOtherItemWithName:(NSString*)name {
+    NSString *segueIdentifier = self.isRequestedWanted ? @"requestSegue" : @"offeringSegue";
     SearchItem *other = [[SearchItem alloc]initWithName:name itemImage:[UIImage imageNamed:@"Other"]];
-    [self performSegueWithIdentifier:@"itemSelectedSegue" sender:other];
+    [self performSegueWithIdentifier:segueIdentifier sender:other];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
