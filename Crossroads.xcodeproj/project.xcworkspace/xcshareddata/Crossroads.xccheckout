@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>C047C2CF-73F8-4F6E-B49B-5EC2BF1DB411</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Crossroads</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>1A4ED8B8FA8A192A3960C47018B874B4CC882B51</key>
 		<string>github.com:maryjenel/Crossroads.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Crossroads.xcodeproj</string>
+	<string>Crossroads.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>1A4ED8B8FA8A192A3960C47018B874B4CC882B51</key>
