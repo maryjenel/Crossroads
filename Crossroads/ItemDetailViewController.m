@@ -9,8 +9,9 @@
 #import "ItemDetailViewController.h"
 #import "SearchItem.h"
 #import <Parse/Parse.h>
+#import <MessageUI/MFMessageComposeViewController.h>
 
-@interface ItemDetailViewController ()
+@interface ItemDetailViewController ()<MFMessageComposeViewControllerDelegate>
 @property (strong, nonatomic) IBOutlet UIImageView *detailImageView;
 
 @end
@@ -19,10 +20,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.detailImageView.image = self.item.itemImage;
+    self.detailImageView.image = self.searchItem.itemImage;
     UIColor *red = [UIColor colorWithRed:.93 green:.35 blue:.17 alpha:1];
     UIColor *blue = [UIColor colorWithRed:.29 green:.84 blue:.84 alpha:1];
     if ([SearchItem isRequestWanted]) {
+        self.detailImageView.image = self.searchItem.itemImage;
+        // Do any additional setup after loading the view.
+
 
         [self.view setBackgroundColor:red];
     }
@@ -31,21 +35,38 @@
         [self.view setBackgroundColor:blue];
     }
 
-    }
+}
 
 
 
 - (IBAction)onTradeButtonTapped:(id)sender
 {
-    //Get in contact with user who is offering the item
-    
-    //Also push a Request/Offering object to Parse, depending on which flow led to this screen
-    NSString *className = self.isOffering ? @"Offering" : @"Request";
-    PFObject *offering = [PFObject objectWithClassName:className];
-    offering[@"item"] = self.item.itemName;
-    offering[@"user"] = [PFUser currentUser];
+    //get phone number of user
 
-    [offering saveInBackground];
+    PFRelation *relation = [self.item relationForKey:@"user"];
+
+    [[relation query] findObjectsInBackgroundWithBlock:^(NSArray *results, NSError *error) {
+        if (!error){
+            PFUser *user = [results objectAtIndex:0];
+            NSString *itemString = [self.item[@"item"] lowercaseString];
+            if (![itemString hasSuffix:@"s"])
+            {
+                itemString = [NSString stringWithFormat:@"a %@", itemString];
+            }
+            NSString *SMSMessage = [NSString stringWithFormat:@"Hi, I saw that you were offering %@ for trade.", itemString];
+            [self sendSMS:SMSMessage recipientList:[NSArray arrayWithObjects:user[@"phoneNumber"], nil]];
+        } else {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+
+//    //Also push a Request/Offering object to Parse, depending on which flow led to this screen
+//    NSString *className = self.isOffering ? @"Offering" : @"Request";
+//    PFObject *offering = [PFObject objectWithClassName:className];
+//    offering[@"item"] = self.item[@"item"];
+//    offering[@"user"] = [PFUser currentUser];
+//    [offering saveInBackground];
 }
 
 - (IBAction)onStoreButtonTapped:(id)sender
@@ -54,14 +75,34 @@
     //Should we just pull up a map with the store's physical location?
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)sendSMS:(NSString *)bodyOfMessage recipientList:(NSArray *)recipients
+{
+    MFMessageComposeViewController *controller = [MFMessageComposeViewController new];
+    if([MFMessageComposeViewController canSendText])
+    {
+        controller.body = bodyOfMessage;
+        controller.recipients = recipients;
+        controller.messageComposeDelegate = self;
+        [self presentViewController:controller animated:YES completion:nil];
+    }
 }
-*/
+
+- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+
+    if (result == MessageComposeResultCancelled)
+    {
+        NSLog(@"Message cancelled");
+    }
+    else if (result == MessageComposeResultSent)
+    {
+        NSLog(@"Message sent");
+    }
+    else
+    {
+        NSLog(@"Message failed");
+    }
+}
 
 @end

@@ -96,7 +96,14 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(OfferingTableViewCell *)sender
 {
     ItemDetailViewController *vc = segue.destinationViewController;
-    vc.user = [all_offerings objectAtIndex:[[self.itemOfferingsTableView indexPathForCell:sender] row]];
+    vc.item = [all_offerings objectAtIndex:[[self.itemOfferingsTableView indexPathForCell:sender] row]];
+
+//    //used to add user to offerings/requests manually added to Parse
+//    PFUser *user = [PFUser currentUser];
+//    PFRelation *relation = [vc.item relationForKey:@"user"];
+//    [relation addObject:user];
+//
+//    [vc.item saveInBackground];
 }
 
 /*

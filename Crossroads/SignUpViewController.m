@@ -65,9 +65,7 @@
         user.username = self.usernameTextField.text;
         user.password = self.passwordTextField.text;
         user.email = self.emailTextField.text;
-
-        NSNumber *phoneNumber = [NSNumber numberWithInt:[self.phoneNumberTextField.text intValue]];
-        [user setObject:phoneNumber forKey:@"phoneNumber"];
+        [user setObject:self.phoneNumberTextField.text forKey:@"phoneNumber"];
 
         [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
          {

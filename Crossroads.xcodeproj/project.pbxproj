@@ -16,6 +16,7 @@
 		60A8BAC11B521B2F003DD2C8 /* CRWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A8BAC01B521B2F003DD2C8 /* CRWeather.m */; };
 		60A8BAC71B521EEF003DD2C8 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A8BAC61B521EEF003DD2C8 /* SignUpViewController.m */; };
 		60A8BACA1B521F0D003DD2C8 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A8BAC91B521F0D003DD2C8 /* LogInViewController.m */; };
+		60A8BACC1B5274DE003DD2C8 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60A8BACB1B5274DE003DD2C8 /* MessageUI.framework */; };
 		60ED449F1B51B9AC00D068DD /* ItemGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60ED449E1B51B9AC00D068DD /* ItemGridViewController.m */; };
 		60ED44A21B51BA1600D068DD /* ItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60ED44A11B51BA1600D068DD /* ItemViewController.m */; };
 		60ED44A51B51BA2B00D068DD /* ItemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60ED44A41B51BA2B00D068DD /* ItemDetailViewController.m */; };
@@ -70,6 +71,7 @@
 		60A8BAC61B521EEF003DD2C8 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		60A8BAC81B521F0D003DD2C8 /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
 		60A8BAC91B521F0D003DD2C8 /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
+		60A8BACB1B5274DE003DD2C8 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		60ED449D1B51B9AC00D068DD /* ItemGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemGridViewController.h; sourceTree = "<group>"; };
 		60ED449E1B51B9AC00D068DD /* ItemGridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemGridViewController.m; sourceTree = "<group>"; };
 		60ED44A01B51BA1600D068DD /* ItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemViewController.h; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60A8BACC1B5274DE003DD2C8 /* MessageUI.framework in Frameworks */,
 				6070766A1B51DF5E006D3C95 /* Bolts.framework in Frameworks */,
 				6070766B1B51DF5E006D3C95 /* Parse.framework in Frameworks */,
 				6070766C1B51DF5E006D3C95 /* ParseCrashReporting.framework in Frameworks */,
@@ -155,6 +158,7 @@
 		607076631B51DF44006D3C95 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				60A8BACB1B5274DE003DD2C8 /* MessageUI.framework */,
 				607076641B51DF5D006D3C95 /* Bolts.framework */,
 				607076651B51DF5D006D3C95 /* Parse.framework */,
 				607076661B51DF5D006D3C95 /* ParseCrashReporting.framework */,
@@ -477,7 +481,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -514,7 +518,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
