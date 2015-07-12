@@ -39,6 +39,7 @@
 		620114F51B51CDE000EDF945 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 620114F41B51CDE000EDF945 /* libsqlite3.dylib */; };
 		620114F71B51CDEC00EDF945 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 620114F61B51CDEC00EDF945 /* Accounts.framework */; };
 		620114F91B51CDF700EDF945 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 620114F81B51CDF700EDF945 /* Social.framework */; };
+		6201150B1B51E9A200EDF945 /* SearchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6201150A1B51E9A200EDF945 /* SearchItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,8 @@
 		620114F41B51CDE000EDF945 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		620114F61B51CDEC00EDF945 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		620114F81B51CDF700EDF945 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		620115091B51E9A200EDF945 /* SearchItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchItem.h; sourceTree = "<group>"; };
+		6201150A1B51E9A200EDF945 /* SearchItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +211,7 @@
 		620114B61B50E03600EDF945 /* Crossroads */ = {
 			isa = PBXGroup;
 			children = (
+				620115081B51E98100EDF945 /* Models */,
 				620114BB1B50E03600EDF945 /* AppDelegate.h */,
 				620114BC1B50E03600EDF945 /* AppDelegate.m */,
 				620114C41B50E03600EDF945 /* Main.storyboard */,
@@ -245,6 +249,15 @@
 				620114D51B50E03600EDF945 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		620115081B51E98100EDF945 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				620115091B51E9A200EDF945 /* SearchItem.h */,
+				6201150A1B51E9A200EDF945 /* SearchItem.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,6 +368,7 @@
 				620114BA1B50E03600EDF945 /* main.m in Sources */,
 				620114C31B50E03600EDF945 /* InitialViewController.m in Sources */,
 				620114C01B50E03600EDF945 /* Crossroads.xcdatamodeld in Sources */,
+				6201150B1B51E9A200EDF945 /* SearchItem.m in Sources */,
 				60ED449F1B51B9AC00D068DD /* ItemGridViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
