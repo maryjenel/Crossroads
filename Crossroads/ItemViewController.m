@@ -5,17 +5,15 @@
 //  Created by Yi-Chin Sun on 7/11/15.
 //  Copyright (c) 2015 Mary Jenel Myers. All rights reserved.
 //
-
+#import <Parse/Parse.h>
 #import "ItemViewController.h"
 #import "OfferingTableViewCell.h"
 #import "ItemDetailViewController.h"
 #import "SearchItem.h"
-#import <Parse/Parse.h>
+#import "CRWeather.h"
 
 @interface ItemViewController ()<UITableViewDataSource, UITableViewDelegate>
-@property (strong, nonatomic) IBOutlet UILabel *itemLabel;
-@property (strong, nonatomic) IBOutlet UIImageView *itemImageView;
-@property (strong, nonatomic) IBOutlet UITableView *itemOfferingsTableView;
+
 @property NSArray *offeringUsersArray;
 
 
@@ -42,6 +40,18 @@
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
+}
+
+-(void)awakeFromNib
+{
+    //    37.8, -122.4]
+    self.data_model = [[CRWeather alloc] init_with_parent:self];
+    [self.data_model do_pull_data:37.8 long_:-122.4];
+}
+
+-(void)weather_data:(NSDictionary *)j_data
+{
+    NSLog(@"Called: %@", j_data);
 }
 
 - (void)didReceiveMemoryWarning {
