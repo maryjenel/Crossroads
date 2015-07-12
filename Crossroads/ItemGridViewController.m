@@ -93,7 +93,6 @@
     ItemViewController *vc = segue.destinationViewController;
     
     vc.searchItem = sender;
-    //vc.wanted = self.isRequestedWanted;
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
