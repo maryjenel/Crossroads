@@ -12,8 +12,7 @@
 
 
 @interface InitialViewController ()
-@property (weak, nonatomic) IBOutlet UIButton *wantedbtn;
-@property (weak, nonatomic) IBOutlet UIButton *tradebtn;
+
 @end
 
 @implementation InitialViewController
@@ -21,8 +20,6 @@
 - (void)viewDidLoad
 {    [super viewDidLoad];
 }
-
-
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UIButton *)sender
 {
