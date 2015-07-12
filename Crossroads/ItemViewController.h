@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class SearchItem;
 
 @interface ItemViewController : UIViewController
-@property (strong, nonatomic) IBOutlet UILabel *itemLabel;
-@property (strong, nonatomic) IBOutlet UIImageView *itemImageView;
+
+@property SearchItem *searchItem;
 
 @end

@@ -7,9 +7,16 @@
 //
 
 #import "ItemViewController.h"
+#import "OfferingTableViewCell.h"
+#import "ItemDetailViewController.h"
+#import "SearchItem.h"
 
 @interface ItemViewController ()<UITableViewDataSource, UITableViewDelegate>
+@property (strong, nonatomic) IBOutlet UILabel *itemLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *itemImageView;
 @property (strong, nonatomic) IBOutlet UITableView *itemOfferingsTableView;
+@property NSArray *offeringUsersArray;
+
 
 @end
 
@@ -18,6 +25,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
+    self.itemLabel.text = self.searchItem.itemName;
+    self.itemImageView.image = self.searchItem.itemImage;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,13 +37,23 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    OfferingTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"OfferingCell"];
+    //cell.userAvatarImageView.image = image from imvu
+    //cell.offeringDistanceLabel.text = distance from user
+    //cell.offeringTextLabel.text = description
     return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return self.offeringUsersArray.count;
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(OfferingTableViewCell *)sender
+{
+    ItemDetailViewController *vc = segue.destinationViewController;
+    vc.user = [self.offeringUsersArray objectAtIndex:[[self.itemOfferingsTableView indexPathForCell:sender] row]];
+    vc.item = self.itemLabel.text;
 }
 
 /*
