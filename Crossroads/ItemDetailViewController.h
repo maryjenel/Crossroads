@@ -17,7 +17,6 @@
 @property PFObject *item;
 @property SearchItem *searchItem;
 // Need to keep track of whether this is offering or request
-@property BOOL isOffering;
 
 
 @end

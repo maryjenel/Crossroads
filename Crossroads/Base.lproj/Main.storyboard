@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="44w-IR-JEe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="44w-IR-JEe">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -337,7 +337,7 @@
                                     <constraint firstAttribute="height" constant="30" id="1DU-MP-uVS"/>
                                     <constraint firstAttribute="width" constant="288" id="MzF-DF-Gvh"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zaq-fe-pIP">
@@ -360,7 +360,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Type a longer description of what you have and what you're looking for here!" translatesAutoresizingMaskIntoConstraints="NO" id="pAR-cH-IW0">
                                 <rect key="frame" x="16" y="268" width="288" height="217"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
                             </textView>
                         </subviews>
@@ -414,24 +414,13 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="53" id="Ded-Mc-XHO"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="19"/>
                                 <state key="normal" title="Trade">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="onTradeButtonTapped:" destination="JC7-bc-tdI" eventType="touchUpInside" id="O2w-qm-6iq"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vv5-5C-yg3">
-                                <rect key="frame" x="160" y="515" width="160" height="53"/>
-                                <color key="backgroundColor" red="0.93333333330000001" green="0.34509803919999998" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <rect key="contentStretch" x="0.050000000000000003" y="0.0" width="1" height="1"/>
-                                <state key="normal" title="Get at Store">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onStoreButtonTapped:" destination="JC7-bc-tdI" eventType="touchUpInside" id="ce0-wA-wEf"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pjn-Ht-1tQ">
@@ -445,9 +434,23 @@
                                 <rect key="frame" x="16" y="253" width="288" height="254"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">I have a wide-brimmed hat 👒 that I'm not currently using. I'm willing to lend it out for the day if you could bring me a couple of bottles of water.  Let me know if you're willing to trade! 😊</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vv5-5C-yg3">
+                                <rect key="frame" x="160" y="515" width="160" height="53"/>
+                                <color key="backgroundColor" red="0.93333333330000001" green="0.34509803919999998" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="contentStretch" x="0.050000000000000003" y="0.0" width="1" height="1"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="19"/>
+                                <state key="normal" title="Get at Store">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onStoreButtonTapped:" destination="JC7-bc-tdI" eventType="touchUpInside" id="ce0-wA-wEf"/>
+                                    <segue destination="He9-vR-wBv" kind="push" id="w9f-Em-x98"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -476,6 +479,81 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WA3-Ff-nLi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1903" y="367"/>
+        </scene>
+        <!--Store View Controller-->
+        <scene sceneID="5Rc-bk-LtU">
+            <objects>
+                <viewController id="He9-vR-wBv" customClass="StoreViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="s1X-Jc-bdj"/>
+                        <viewControllerLayoutGuide type="bottom" id="yg1-kp-IoD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="o37-DY-b2F">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OSLBackgroundNoClouds" translatesAutoresizingMaskIntoConstraints="NO" id="4cB-yP-fhD">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="cloud" translatesAutoresizingMaskIntoConstraints="NO" id="mdb-rV-AGG">
+                                <rect key="frame" x="184" y="491" width="48" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="BvV-9p-fqF"/>
+                                    <constraint firstAttribute="width" constant="48" id="N20-ao-Pyd"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="cloud2" translatesAutoresizingMaskIntoConstraints="NO" id="vpd-zH-1HE">
+                                <rect key="frame" x="132" y="487" width="27" height="21"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming soon..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YeI-tb-c6g">
+                                <rect key="frame" x="30" y="140" width="260" height="73"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="19"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="cloud" translatesAutoresizingMaskIntoConstraints="NO" id="jhY-ln-kUp">
+                                <rect key="frame" x="256" y="481" width="48" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="av2-5a-rxI"/>
+                                    <constraint firstAttribute="height" constant="17" id="pbO-Od-va5"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="cloud" translatesAutoresizingMaskIntoConstraints="NO" id="594-ih-QV5">
+                                <rect key="frame" x="0.0" y="487" width="37" height="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="37" id="qTH-Fw-SAU"/>
+                                    <constraint firstAttribute="height" constant="14" id="tOI-dW-zBj"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yg1-kp-IoD" firstAttribute="top" secondItem="YeI-tb-c6g" secondAttribute="bottom" constant="355" id="8ez-uu-efk"/>
+                            <constraint firstAttribute="trailing" secondItem="4cB-yP-fhD" secondAttribute="trailing" id="BPf-vR-gSb"/>
+                            <constraint firstItem="yg1-kp-IoD" firstAttribute="top" secondItem="mdb-rV-AGG" secondAttribute="bottom" constant="60" id="FZd-ph-Lsi"/>
+                            <constraint firstItem="yg1-kp-IoD" firstAttribute="top" secondItem="594-ih-QV5" secondAttribute="bottom" constant="67" id="HmZ-xg-BHJ"/>
+                            <constraint firstItem="4cB-yP-fhD" firstAttribute="top" secondItem="s1X-Jc-bdj" secondAttribute="bottom" id="LR3-Fi-lC0"/>
+                            <constraint firstItem="yg1-kp-IoD" firstAttribute="top" secondItem="vpd-zH-1HE" secondAttribute="bottom" constant="60" id="MBd-Jp-ZY3"/>
+                            <constraint firstItem="4cB-yP-fhD" firstAttribute="leading" secondItem="o37-DY-b2F" secondAttribute="leading" id="VPo-Z2-Fv3"/>
+                            <constraint firstAttribute="centerX" secondItem="YeI-tb-c6g" secondAttribute="centerX" id="aMi-1U-j93"/>
+                            <constraint firstItem="YeI-tb-c6g" firstAttribute="top" secondItem="s1X-Jc-bdj" secondAttribute="bottom" constant="76" id="g6x-9F-md2"/>
+                            <constraint firstItem="yg1-kp-IoD" firstAttribute="top" secondItem="jhY-ln-kUp" secondAttribute="bottom" constant="70" id="tbh-nR-cM7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YeI-tb-c6g" secondAttribute="trailing" constant="14" id="vgE-ka-2vD"/>
+                            <constraint firstItem="yg1-kp-IoD" firstAttribute="top" secondItem="4cB-yP-fhD" secondAttribute="bottom" id="yog-Oh-uIo"/>
+                            <constraint firstItem="YeI-tb-c6g" firstAttribute="leading" secondItem="o37-DY-b2F" secondAttribute="leadingMargin" constant="14" id="zf7-lM-fsU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZGO-Lw-RTh"/>
+                    <connections>
+                        <outlet property="cloudfourImage" destination="jhY-ln-kUp" id="vvk-2F-buv"/>
+                        <outlet property="cloudoneImage" destination="594-ih-QV5" id="im7-xD-zo5"/>
+                        <outlet property="cloudthreeImage" destination="mdb-rV-AGG" id="zVD-Um-M1e"/>
+                        <outlet property="cloudtwoImage" destination="vpd-zH-1HE" id="7ms-S0-rUT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zu2-S6-8Ph" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2254" y="367"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Z08-0c-mo2">
@@ -702,6 +780,9 @@
     </scenes>
     <resources>
         <image name="OSLBackground" width="750" height="1334"/>
+        <image name="OSLBackgroundNoClouds" width="750" height="1334"/>
+        <image name="cloud" width="114" height="30"/>
+        <image name="cloud2" width="26" height="17"/>
         <image name="crossroadsLogo copy" width="504" height="360"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
